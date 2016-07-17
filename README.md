@@ -6,7 +6,7 @@ They never look the same across browsers, and they're the toughest thing to cust
 
 Uploadr makes it dead simple to create outstanding file inputs that entirely fit in your website.
 
-Please visit: <a href="http://demos.sarahdayan.com/uploadr » target="_blank">http://demos.sarahdayan.com/uploadr</a>
+Please visit: [http://demos.sarahdayan.com/uploadr](http://demos.sarahdayan.com/uploadr)
 
 ## Features
 
@@ -110,12 +110,12 @@ What text should the delete button show.
 
 <pre>
 $('.uploadr').uploadr({
-  layout: 'default',             <span class="comment">// 'default' or 'inline'
-  displayPreview: true,          <span class="comment">// true or false
-  deleteButton: true,            <span class="comment">// true or false
-  loadButtonText: 'Load a file', <span class="comment">// any string
-  changeButtonText: 'Change',    <span class="comment">// any string
-  deleteButtonText: 'Delete'     <span class="comment">// any string
+  layout: 'default',             // 'default' or 'inline'
+  displayPreview: true,          // true or false
+  deleteButton: true,            // true or false
+  loadButtonText: 'Load a file', // any string
+  changeButtonText: 'Change',    // any string
+  deleteButtonText: 'Delete'     // any string
 });</pre>
 
 ### Optional — Uploadr theme
@@ -123,8 +123,7 @@ $('.uploadr').uploadr({
 We got you covered even if design isn't your cup of tea. Uploadr theme is extremely simple, unobtrusive and easy to integrate in an existing design.
 
 <pre>
-&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;css/uploadr-theme.min.css&quot;&gt;
-</pre>
+&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;css/uploadr-theme.min.css&quot;&gt;</pre>
 
 ## Credits
 
