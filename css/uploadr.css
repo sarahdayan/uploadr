@@ -1,0 +1,29 @@
+/* Uploadr v1.0.0 by Sarah Dayan | http://demos.sarahdayan.com/uploadr */
+.uploadr .uploadr-buttons {
+	position: relative;
+}
+
+.uploadr .uploadr-buttons,
+.uploadr .uploadr-button {
+	display: inline-block;
+}
+
+.uploadr .uploadr-button {
+	cursor: pointer;
+}
+
+.uploadr input[type="file"] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+	cursor: pointer;
+}
+
+.uploadr.uploadr-new .uploadr-exists,
+.uploadr.uploadr-exists .uploadr-new {
+	display: none;
+}
