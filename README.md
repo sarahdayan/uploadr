@@ -6,7 +6,7 @@ They never look the same across browsers, and they're the toughest thing to cust
 
 Uploadr makes it dead simple to create outstanding file inputs that entirely fit in your website.
 
-Please visit: [http://demos.sarahdayan.com/uploadr](http://demos.sarahdayan.com/uploadr)
+Please visit: [https://sarahdayan.github.io/uploadr](https://sarahdayan.github.io/uploadr)
 
 ## Features
 
