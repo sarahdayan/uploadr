@@ -31,8 +31,10 @@ is only 2KB.
 
 Uploadr works with JQuery, so you'll need to add JQuery then Uploadr for it to work properly. Be careful if you use multiple JavaScript libraries: Uploadr is made to avoid conflicts, but you never know what might happen.
 
+If you need IE8 compatibility, use JQuery 1.x.
+
 <pre>
-&lt;script src=&quot;http://code.jquery.com/jquery-latest.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery-1.11.3.min.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;js/uploadr.min.js&quot;&gt;&lt;/script&gt;</pre>
 
 ### Include your input
