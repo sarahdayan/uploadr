@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Uploadr.js | Make file inputs pretty, on all platforms</title>
+		<link type="text/css" rel="stylesheet" href="css/reset.css">
+		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i%7CInconsolata">
+		<link type="text/css" rel="stylesheet" href="css/simple-line-icons.css">
+		<link type="text/css" rel="stylesheet" href="css/outline.min.css">
+		<link type="text/css" rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<section id="top" class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col col-12">
+						<h1>Uploadr</h1>
+						<h2>Make file inputs pretty, on all platforms.</h2>
+						<p>File inputs are the most annoying form elements.<br class="hidden-m"> They never look the same across browsers, and they're the toughest thing to customize.</p>
+						<p>Uploadr makes it dead simple to create outstanding file inputs that entirely fit in your website.</p>
+						<a href="https://github.com/sarahdayan/uploadr/archive/master.zip" class="btn">Download</a><br> 
+						<a href="demo.html" target="_blank">Demo</a> | 
+						<a href="https://github.com/sarahdayan/uploadr" target="_blank">Github</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="features" class="section">
+			<div class="container">
+				<h3 class="hidden">Features</h3>
+				<div class="row">
+					<div class="col col-4">
+						<i class="icon-layers"></i>
+						<h4>Cross-browser</h4>
+						<p>Uploadr works on all major browsers,<br class="hidden-m"> old and new. Even IE8. No shit.</p>
+					</div>
+					<div class="col col-4">
+						<i class="icon-settings"></i>
+						<h4>Highly customizable</h4>
+						<p>Plugins must adapt to you, not the other way around. Uploadr comes 100% vanilla<br class="hidden-m"> with an optional theme.</p>
+					</div>
+					<div class="col col-4">
+						<i class="icon-paper-plane"></i>
+						<h4>Lightweight</h4>
+						<p>The minified version of Uploadr.js<br> is only 2KB.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="usage" class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col col-12">
+						<h3>Include JQuery and Uploadr</h3>
+						<p>Uploadr works with JQuery, so you'll need to add JQuery then Uploadr for it to work properly. Be careful if you use multiple JavaScript libraries: Uploadr is made to avoid conflicts, but you never know what might happen.</p>
+<pre>
+&lt;script src=<span class="value">&quot;http://code.jquery.com/jquery-latest.min.js&quot;</span>&gt;&lt;/script&gt;
+&lt;script src=<span class="value">&quot;js/uploadr.min.js&quot;</span>&gt;&lt;/script&gt;</pre>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-12">
+						<h3>Include your input</h3>
+						<p>Three words are at the core of Uploadr: <strong>make things easy</strong>.<br> The only thing you need to do is to include your input file and give it a class or an id (whichever you want), we take care of the rest.</p>
+<pre>
+&lt;input type=<span class="value">&quot;file&quot;</span> name=<span class="value">&quot;uploadr&quot;</span> id=<span class="value">&quot;uploadr&quot;</span>&gt;</pre>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-12">
+						<h3>Add some style</h3>
+						<p>You're free to use the Uploadr theme or not, but it still needs a few lines of CSS to work properly. Either include <code>uploadr.min.css</code> in your page, or copy-paste the code in your own CSS stylesheet.</p>
+<pre>
+.uploadr .uploadr-buttons {
+  position: <span class="value">relative</span>;
+}
+
+.uploadr .uploadr-buttons,
+.uploadr .uploadr-button {
+  display: <span class="value">inline-block</span>;
+}
+
+.uploadr .uploadr-button {
+  cursor: <span class="value">pointer</span>;
+}
+
+.uploadr input[type="file"] {
+  position: <span class="value">absolute</span>;
+  top: <span class="value">0</span>;
+  left: <span class="value">0</span>;
+  width: <span class="value">100%</span>;
+  height: <span class="value">100%</span>;
+  opacity: <span class="value">0</span>;
+  cursor: <span class="value">pointer</span>;
+}
+
+.uploadr.uploadr-new .uploadr-exists,
+.uploadr.uploadr-exists .uploadr-new {
+  display: <span class="value">none</span>;
+}</pre>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-12">
+						<h3>Unleash the beast</h3>
+						<p>Everything is set up, now you just need to pull the trigger. To fire Uploadr, just add the following piece of code within a <code>&lt;script&gt;</code> tag in your page (or directly in your script page if you have one) and <em>voilà</em>!</p>
+<pre>
+$(function() {
+  $(<span class="value">'#uploadr'</span>).uploadr();
+});</pre>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-12">
+						<h3>Options</h3>
+						<p>Uploadr comes with a few options to help you adapt it to your design.</p>
+						<div id="options">
+							<div class="row">
+								<div class="col col-2">
+									<strong>layout</strong>
+								</div>
+								<div class="col col-3">
+									default: <code>'default'</code>
+								</div>
+								<div class="col col-7">
+									What layout style the plugin will render in.
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-2">
+									<strong>displayPreview</strong>
+								</div>
+								<div class="col col-3">
+									default: <code>true</code>
+								</div>
+								<div class="col col-7">
+									Should the plugin display a preview of the selected file.
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-2">
+									<strong>deleteButton</strong>
+								</div>
+								<div class="col col-3">
+									default: <code>true</code>
+								</div>
+								<div class="col col-7">
+									Should the plugin display a delete button once the file is selected.
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-2">
+									<strong>loadButtonText</strong>
+								</div>
+								<div class="col col-3">
+									default: <code>'Load a file'</code>
+								</div>
+								<div class="col col-7">
+									What text should the load button show.
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-2">
+									<strong>changeButtonText</strong>
+								</div>
+								<div class="col col-3">
+									default: <code>'Change'</code>
+								</div>
+								<div class="col col-7">
+									What text should the change button show.
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-2">
+									<strong>deleteButtonText</strong>
+								</div>
+								<div class="col col-3">
+									default: <code>'Delete'</code>
+								</div>
+								<div class="col col-7">
+									What text should the delete button show.
+								</div>
+							</div>
+						</div>
+<pre>
+$(<span class="value">'.uploadr'</span>).uploadr({
+  layout: <span class="value">'default'</span>,             <span class="comment">// 'default' or 'inline'</span>
+  displayPreview: <span class="value">true</span>,          <span class="comment">// true or false</span>
+  deleteButton: <span class="value">true</span>,            <span class="comment">// true or false</span>
+  loadButtonText: <span class="value">'Load a file'</span>, <span class="comment">// any string</span>
+  changeButtonText: <span class="value">'Change'</span>,    <span class="comment">// any string</span>
+  deleteButtonText: <span class="value">'Delete'</span>     <span class="comment">// any string</span>
+});</pre>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-12">
+						<h3><em>Optional</em> — Uploadr theme</h3>
+						<p>We got you covered even if design isn't your cup of tea. Uploadr theme is extremely simple, unobtrusive and easy to integrate in an existing design.</p>
+<pre>
+&lt;link type=<span class="value">&quot;text/css&quot;</span> rel=<span class="value">&quot;stylesheet&quot;</span> href=<span class="value">&quot;css/uploadr-theme.min.css&quot;</span>&gt;
+</pre>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="changelog" class="section">
+			<div class="container">
+				<h3>Changelog</h3>
+				<div class="row">
+					<div class="col col-2">
+						<time datetime="2016-07-17 16:56">07.17.2016</time>
+					</div>
+					<div class="col col-2">
+						<strong>1.0.0</strong>
+					</div>
+					<div class="col col-8">
+						Launch of Uploadr!
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-2">
+						<time datetime="2016-07-17 13:40">07.17.2016</time>
+					</div>
+					<div class="col col-2">
+						<strong>1.0.0</strong>
+					</div>
+					<div class="col col-8">
+						Launch of beta.
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer id="footer" class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col col-7">
+						<h3>Credits</h3>
+						<p>My name is Sarah Dayan and I'm the one behind Uploadr.<br clear="hidden-m"> The website uses <a href="http://www.getoutline.com" target="_blank">Outline</a>, my lightweight micro-framework.</p>
+					</div>
+					<div class="col col-5">
+						<h3>Social</h3>
+						<p>Enjoying Uploadr? Show me some love by starring on <a href="https://github.com/sarahdayan/uploadr" target="_blank">Github</a>!</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script>
+			/*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-79741002-1', 'auto');
+			ga('send', 'pageview');*/
+		</script>
+	</body>
+</html>
