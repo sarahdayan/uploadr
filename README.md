@@ -127,13 +127,13 @@ $('.uploadr').uploadr({
   deleteButton: true,             // true or false
   loadButtonText: 'Load a file',  // any string
   changeButtonText: 'Change',     // any string
-  deleteButtonText: 'Delete'      // any string
+  deleteButtonText: 'Delete',      // any string
   addFileEvent: function() {},    // any function
   changeFileEvent: function() {}, // any function
   deleteFileEvent: function() {}  // any function
 });</pre>
 
-### New: Events
+### Events
 
 Some people like options, others prefer events. Whatever your preference is, sometimes you just need to fire an event in specific curcumstances, and adding that logic directly within an option can become cumbersome and unreadable rather quickly.
 
