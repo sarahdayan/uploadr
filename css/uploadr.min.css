@@ -1,2 +1,2 @@
-/* Uploadr v1.0.0 by Sarah Dayan | https://sarahdayan.github.io/uploadr */
+/* Uploadr v1.1.0 by Sarah Dayan | https://sarahdayan.github.io/uploadr */
 .uploadr .uploadr-buttons{position:relative}.uploadr .uploadr-button,.uploadr .uploadr-buttons{display:inline-block}.uploadr .uploadr-button{cursor:pointer}.uploadr input[type=file]{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';cursor:pointer}.uploadr.uploadr-exists .uploadr-new,.uploadr.uploadr-new .uploadr-exists{display:none}
