@@ -94,30 +94,30 @@
 			wrapper.addClass('uploadr-new').removeClass('uploadr-exists');
 			storedValue = '';
 			if (callback) {
-				deleteFileEvent();
+				uploadr.trigger('deleteFile');
 			}
 		}
 
 		function addOrDeleteEvent(isNew) {
 			if (isNew) {
-				addFileEvent();
+				uploadr.trigger('addFile');
 			}
 			else {
-				changeFileEvent();
+				uploadr.trigger('changeFile');
 			}
 		}
 
-		function addFileEvent() {
+		uploadr.on('addFile', function() {
 			settings.addFileEvent();
-		}
+		});
 
-		function changeFileEvent() {
+		uploadr.on('changeFile', function() {
 			settings.changeFileEvent();
-		}
+		});
 
-		function deleteFileEvent() {
+		uploadr.on('deleteFile', function() {
 			settings.deleteFileEvent();
-		}
+		});
 
 	};
 
