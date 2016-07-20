@@ -73,7 +73,7 @@
 
 		function displayFileName(preview, filename, isNew) {
 			preview.html(filename);
-			addOrDeleteEvent(isNew);
+			addOrChangeEvent(isNew);
 		}
 
 		function displayFilePreview(preview, file, isNew) {
@@ -85,20 +85,20 @@
 			if (file) {
 				reader.readAsDataURL(file);
 			}
-			addOrDeleteEvent(isNew);
+			addOrChangeEvent(isNew);
 		}
 
-		function deleteFile(uploadr, wrapper, callback) {
-			callback = typeof(callback) === 'undefined' ? true : callback;
+		function deleteFile(uploadr, wrapper, event) {
+			event = typeof(event) === 'undefined' ? true : event;
 			uploadr[0].value = null;
 			wrapper.addClass('uploadr-new').removeClass('uploadr-exists');
 			storedValue = '';
-			if (callback) {
+			if (event) {
 				uploadr.trigger('deleteFile');
 			}
 		}
 
-		function addOrDeleteEvent(isNew) {
+		function addOrChangeEvent(isNew) {
 			if (isNew) {
 				uploadr.trigger('addFile');
 			}
