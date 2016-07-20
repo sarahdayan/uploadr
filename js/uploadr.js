@@ -1,4 +1,4 @@
-/* Uploadr v1.0.0 by Sarah Dayan | http://demos.sarahdayan.com/uploadr */
+/* Uploadr v1.1.0 by Sarah Dayan | http://demos.sarahdayan.com/uploadr */
 (function ($) {
 
 	$.fn.uploadr = function(options) {
@@ -9,7 +9,10 @@
 			deleteButton: true,
 			loadButtonText: 'Load a file',
 			changeButtonText: 'Change',
-			deleteButtonText: 'Delete'
+			deleteButtonText: 'Delete',
+			addFileEvent: function() {},
+			changeFileEvent: function() {},
+			deleteFileEvent: function() {}
 		}, options);
 
 		var uploadr = this;
@@ -30,8 +33,10 @@
 		var deleteButton = wrapper.find('.uploadr-delete');
 		var preview = wrapper.find('.uploadr-preview');
 		var imagesFormat = ['image/jpeg', 'image/png', 'image/gif'];
+		var storedValue = '';
+		var isNew = true;
 
-		deleteFile(uploadr, wrapper);
+		deleteFile(uploadr, wrapper, false);
 
 		if (!settings.deleteButton) {
 			deleteButton.hide();
@@ -39,27 +44,22 @@
 
 		uploadr.on('change', function() {
 			if (uploadr[0].value) {
+				isNew = storedValue != '' ? false : true;
+				storedValue = uploadr[0].value;
 				wrapper.removeClass('uploadr-new').addClass('uploadr-exists');
 				if (settings.displayPreview) {
 					if (window.FileReader) {
 						var file = uploadr[0].files[0];
 						if (imagesFormat.indexOf(file.type) != -1) {
-							preview.html('<img src="" alt="">');
-							var reader = new FileReader();
-							reader.addEventListener('load', function() {
-								preview.find('img')[0].src = reader.result;
-							}, false);
-							if (file) {
-								reader.readAsDataURL(file);
-							}
+							displayFilePreview(preview, file, isNew);
 						}
 						else {
-							displayFileName(preview, file.name);
+							displayFileName(preview, file.name, isNew);
 						}
 					}
 					else {
 						var file = uploadr[0].value.match(/[^\/\\]+$/);
-						displayFileName(preview, file);
+						displayFileName(preview, file, isNew);
 					}
 				}
 			}
@@ -72,13 +72,52 @@
 			deleteFile(uploadr, wrapper);
 		});
 
-		function displayFileName(preview, filename) {
+		function displayFileName(preview, filename, isNew) {
 			preview.html(filename);
+			addOrDeleteEvent(isNew);
 		}
 
-		function deleteFile(uploadr, wrapper) {
+		function displayFilePreview(preview, file, isNew) {
+			preview.html('<img src="" alt="">');
+			var reader = new FileReader();
+			reader.addEventListener('load', function() {
+				preview.find('img')[0].src = reader.result;
+			}, false);
+			if (file) {
+				reader.readAsDataURL(file);
+			}
+			addOrDeleteEvent(isNew);
+		}
+
+		function deleteFile(uploadr, wrapper, callback) {
+			var callback = typeof(callback) === 'undefined' ? true : callback;
 			uploadr[0].value = null;
 			wrapper.addClass('uploadr-new').removeClass('uploadr-exists');
+			storedValue = '';
+			if (callback) {
+				deleteFileEvent();
+			}
+		}
+
+		function addOrDeleteEvent(isNew) {
+			if (isNew) {
+				addFileEvent();
+			}
+			else {
+				changeFileEvent();
+			}
+		}
+
+		function addFileEvent() {
+			settings.addFileEvent();
+		}
+
+		function changeFileEvent() {
+			settings.changeFileEvent();
+		}
+
+		function deleteFileEvent() {
+			settings.deleteFileEvent();
 		}
 
 	};
