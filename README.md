@@ -133,6 +133,26 @@ $('.uploadr').uploadr({
   deleteFileEvent: function() {}  // any function
 });</pre>
 
+### New: Events
+
+Some people like options, others prefer events. Whatever your preference is, sometimes you just need to fire an event in specific curcumstances, and adding that logic directly within an option can become cumbersome and unreadable rather quickly.
+
+That's why you can call every event option directly with Uploadr's custom events, anywhere in your code.
+
+**addFile**
+This event fires immediately when a file is added.
+**changeFile**
+This event fires immediately when a file is changed.
+**deleteFile**
+This event fires immediately when a file is deleted.
+
+*Example*
+
+<pre>
+$('#uploadr').on('addFile', function() {
+  // do stuff whenever a file is added
+});</pre>
+
 ### Optional — Uploadr theme
 
 We got you covered even if design isn't your cup of tea. Uploadr theme is extremely simple, unobtrusive and easy to integrate in an existing design.
