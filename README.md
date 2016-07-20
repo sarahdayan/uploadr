@@ -70,6 +70,7 @@ You're free to use the Uploadr theme or not, but it still needs a few lines of C
   width: 100%;
   height: 100%;
   opacity: 0;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
   cursor: pointer;
 }
 
