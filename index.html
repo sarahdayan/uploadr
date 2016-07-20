@@ -184,6 +184,39 @@ $(function() {
 									What text should the delete button show.
 								</div>
 							</div>
+							<div class="row">
+								<div class="col col-2">
+									<strong>addFileEvent</strong>
+								</div>
+								<div class="col col-3">
+									default: <code>function() {}</code>
+								</div>
+								<div class="col col-7">
+									What else should happen when a file is added.
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-2">
+									<strong>changeFileEvent</strong>
+								</div>
+								<div class="col col-3">
+									default: <code>function() {}</code>
+								</div>
+								<div class="col col-7">
+									What else should happen when a file is changed.
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-2">
+									<strong>deleteFileEvent</strong>
+								</div>
+								<div class="col col-3">
+									default: <code>function() {}</code>
+								</div>
+								<div class="col col-7">
+									What else should happen when a file is deleted.
+								</div>
+							</div>
 						</div>
 <pre>
 $(<span class="value">'.uploadr'</span>).uploadr({
@@ -193,6 +226,9 @@ $(<span class="value">'.uploadr'</span>).uploadr({
   loadButtonText: <span class="value">'Load a file'</span>, <span class="comment">// any string</span>
   changeButtonText: <span class="value">'Change'</span>,    <span class="comment">// any string</span>
   deleteButtonText: <span class="value">'Delete'</span>     <span class="comment">// any string</span>
+  addFileEvent: <span class="value">function() {}</span>    <span class="comment">// any function</span>
+  changeFileEvent: <span class="value">function() {}</span> <span class="comment">// any function</span>
+  deleteFileEvent: <span class="value">function() {}</span> <span class="comment">// any function</span>
 });</pre>
 					</div>
 				</div>
@@ -210,6 +246,17 @@ $(<span class="value">'.uploadr'</span>).uploadr({
 		<section id="changelog" class="section">
 			<div class="container">
 				<h3>Changelog</h3>
+				<div class="row">
+					<div class="col col-2">
+						<time datetime="2016-07-20 10:07">07.20.2016</time>
+					</div>
+					<div class="col col-2">
+						<strong>1.1.0</strong>
+					</div>
+					<div class="col col-8">
+						Add new options: <strong>addFileEvent</strong>, <strong>changeFileEvent</strong> and <strong>deleteFileEvent</strong>.
+					</div>
+				</div>
 				<div class="row">
 					<div class="col col-2">
 						<time datetime="2016-07-17 16:56">07.17.2016</time>
