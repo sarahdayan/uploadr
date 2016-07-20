@@ -135,7 +135,7 @@ $('.uploadr').uploadr({
 
 ### Events
 
-Some people like options, others prefer events. Whatever your preference is, sometimes you just need to fire an event in specific curcumstances, and adding that logic directly within an option can become cumbersome and unreadable rather quickly.
+Some people like options, others prefer events. Whatever your preference is, sometimes you just need to fire an event in specific circumstances, and adding that logic directly within an option can become cumbersome and unreadable rather quickly.
 
 That's why you can call every event option directly with Uploadr's custom events, anywhere in your code.
 
