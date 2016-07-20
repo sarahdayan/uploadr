@@ -181,11 +181,11 @@ code {
 	color: #1b998b;
 }
 
-#usage #options {
+#usage .options {
 	margin-bottom: 20px;
 }
 
-#usage #options .row {
+#usage .options .row {
 	margin-bottom: 5px;
 }
 

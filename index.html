@@ -117,7 +117,7 @@ $(function() {
 					<div class="col col-12">
 						<h3>Options</h3>
 						<p>Uploadr comes with a few options to help you adapt it to your design.</p>
-						<div id="options">
+						<div class="options">
 							<div class="row">
 								<div class="col col-2">
 									<strong>layout</strong>
@@ -219,17 +219,59 @@ $(function() {
 							</div>
 						</div>
 <pre>
-$(<span class="value">'.uploadr'</span>).uploadr({
-  layout: <span class="value">'default'</span>,             <span class="comment">// 'default' or 'inline'</span>
-  displayPreview: <span class="value">true</span>,          <span class="comment">// true or false</span>
-  deleteButton: <span class="value">true</span>,            <span class="comment">// true or false</span>
-  loadButtonText: <span class="value">'Load a file'</span>, <span class="comment">// any string</span>
-  changeButtonText: <span class="value">'Change'</span>,    <span class="comment">// any string</span>
-  deleteButtonText: <span class="value">'Delete'</span>     <span class="comment">// any string</span>
-  addFileEvent: <span class="value">function() {}</span>    <span class="comment">// any function</span>
-  changeFileEvent: <span class="value">function() {}</span> <span class="comment">// any function</span>
-  deleteFileEvent: <span class="value">function() {}</span> <span class="comment">// any function</span>
+$(<span class="value">'#uploadr'</span>).uploadr({
+  layout: <span class="value">'default'</span>,              <span class="comment">// 'default' or 'inline'</span>
+  displayPreview: <span class="value">true</span>,           <span class="comment">// true or false</span>
+  deleteButton: <span class="value">true</span>,             <span class="comment">// true or false</span>
+  loadButtonText: <span class="value">'Load a file'</span>,  <span class="comment">// any string</span>
+  changeButtonText: <span class="value">'Change'</span>,     <span class="comment">// any string</span>
+  deleteButtonText: <span class="value">'Delete'</span>,     <span class="comment">// any string</span>
+  addFileEvent: <span class="value">function() {}</span>,    <span class="comment">// any function</span>
+  changeFileEvent: <span class="value">function() {}</span>, <span class="comment">// any function</span>
+  deleteFileEvent: <span class="value">function() {}</span>  <span class="comment">// any function</span>
 });</pre>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-12">
+						<h3>Events</h3>
+						<p>Some people like options, others prefer events. Whatever your preference is, sometimes you just need to fire an event in specific circumstances, and adding that logic directly within an option can become cumbersome and unreadable rather quickly.</p>
+						<p>That's why you can call every event option directly with Uploadr's custom events, anywhere in your code.</p>
+						<div class="options">
+							<div class="row">
+								<div class="col col-2">
+									<strong>addFile</strong>
+								</div>
+								<div class="col col-10">
+									This event fires immediately when a file is added.
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-2">
+									<strong>changeFile</strong>
+								</div>
+								<div class="col col-10">
+									This event fires immediately when a file is changed.
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-2">
+									<strong>deleteFile</strong>
+								</div>
+								<div class="col col-10">
+									This event fires immediately when a file is deleted.
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col col-12">
+							<p><em>Example:</em></p>
+<pre>
+$(<span class="value">'#uploadr'</span>).on(<span class="value">'addFile'</span>, function() {
+  <span class="comment">// do stuff whenever a file is added</span>
+});</pre>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="row">
@@ -254,7 +296,7 @@ $(<span class="value">'.uploadr'</span>).uploadr({
 						<strong>1.1.0</strong>
 					</div>
 					<div class="col col-8">
-						Add new options: <strong>addFileEvent</strong>, <strong>changeFileEvent</strong> and <strong>deleteFileEvent</strong>.
+						Add new options/events: <strong>addFileEvent</strong>, <strong>changeFileEvent</strong> and <strong>deleteFileEvent</strong>.
 					</div>
 				</div>
 				<div class="row">
