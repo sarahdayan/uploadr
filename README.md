@@ -109,15 +109,27 @@ What text should the change button show.
 **deleteButtonText**
 *default: 'Delete*'
 What text should the delete button show.
+**addFileEvent**
+*default: function() {}*
+What else should happen when a file is added.
+**changeFileEvent**
+*default: function() {}*
+What else should happen when a file is changed.
+**deleteFileEvent**
+*default: function() {}*
+What else should happen when a file is deleted.
 
 <pre>
 $('.uploadr').uploadr({
-  layout: 'default',             // 'default' or 'inline'
-  displayPreview: true,          // true or false
-  deleteButton: true,            // true or false
-  loadButtonText: 'Load a file', // any string
-  changeButtonText: 'Change',    // any string
-  deleteButtonText: 'Delete'     // any string
+  layout: 'default',              // 'default' or 'inline'
+  displayPreview: true,           // true or false
+  deleteButton: true,             // true or false
+  loadButtonText: 'Load a file',  // any string
+  changeButtonText: 'Change',     // any string
+  deleteButtonText: 'Delete'      // any string
+  addFileEvent: function() {},    // any function
+  changeFileEvent: function() {}, // any function
+  deleteFileEvent: function() {}  // any function
 });</pre>
 
 ### Optional — Uploadr theme
