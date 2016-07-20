@@ -28,13 +28,12 @@
 			.before('<div class="uploadr-exists uploadr-button uploadr-change">' + settings.changeButtonText + '</div>');
 
 		var wrapper = uploadr.parents('.uploadr');
-		var loadButton = wrapper.find('.uploadr-load');
-		var changeButton = wrapper.find('.uploadr-change');
 		var deleteButton = wrapper.find('.uploadr-delete');
 		var preview = wrapper.find('.uploadr-preview');
 		var imagesFormat = ['image/jpeg', 'image/png', 'image/gif'];
 		var storedValue = '';
 		var isNew = true;
+		var file = '';
 
 		deleteFile(uploadr, wrapper, false);
 
@@ -44,12 +43,12 @@
 
 		uploadr.on('change', function() {
 			if (uploadr[0].value) {
-				isNew = storedValue != '' ? false : true;
+				isNew = storedValue !== '' ? false : true;
 				storedValue = uploadr[0].value;
 				wrapper.removeClass('uploadr-new').addClass('uploadr-exists');
 				if (settings.displayPreview) {
 					if (window.FileReader) {
-						var file = uploadr[0].files[0];
+						file = uploadr[0].files[0];
 						if (imagesFormat.indexOf(file.type) != -1) {
 							displayFilePreview(preview, file, isNew);
 						}
@@ -58,7 +57,7 @@
 						}
 					}
 					else {
-						var file = uploadr[0].value.match(/[^\/\\]+$/);
+						file = uploadr[0].value.match(/[^\/\\]+$/);
 						displayFileName(preview, file, isNew);
 					}
 				}
@@ -90,7 +89,7 @@
 		}
 
 		function deleteFile(uploadr, wrapper, callback) {
-			var callback = typeof(callback) === 'undefined' ? true : callback;
+			callback = typeof(callback) === 'undefined' ? true : callback;
 			uploadr[0].value = null;
 			wrapper.addClass('uploadr-new').removeClass('uploadr-exists');
 			storedValue = '';
