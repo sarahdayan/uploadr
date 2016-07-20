@@ -127,7 +127,7 @@ $('.uploadr').uploadr({
   deleteButton: true,             // true or false
   loadButtonText: 'Load a file',  // any string
   changeButtonText: 'Change',     // any string
-  deleteButtonText: 'Delete',      // any string
+  deleteButtonText: 'Delete',     // any string
   addFileEvent: function() {},    // any function
   changeFileEvent: function() {}, // any function
   deleteFileEvent: function() {}  // any function
