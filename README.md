@@ -92,32 +92,32 @@ $(function() {
 
 Uploadr comes with a few options to help you adapt it to your design.
 
-**layout**
-*default: 'default*'
-What layout style the plugin will render in.
-**displayPreview**
-*default: true*
-Should the plugin display a preview of the selected file.
-**deleteButton**
-*default: true*
-Should the plugin display a delete button once the file is selected.
-**loadButtonText**
-*default: 'Load a file*'
-What text should the load button show.
-**changeButtonText**
-*default: 'Change*'
-What text should the change button show.
-**deleteButtonText**
-*default: 'Delete*'
-What text should the delete button show.
-**addFileEvent**
-*default: function() {}*
-What else should happen when a file is added.
-**changeFileEvent**
-*default: function() {}*
-What else should happen when a file is changed.
-**deleteFileEvent**
-*default: function() {}*
+**layout**<br>
+*default: 'default*'<br>
+What layout style the plugin will render in.<br>
+**displayPreview**<br>
+*default: true*<br>
+Should the plugin display a preview of the selected file.<br>
+**deleteButton**<br>
+*default: true*<br>
+Should the plugin display a delete button once the file is selected.<br>
+**loadButtonText**<br>
+*default: 'Load a file*'<br>
+What text should the load button show.<br>
+**changeButtonText**<br>
+*default: 'Change*'<br>
+What text should the change button show.<br>
+**deleteButtonText**<br>
+*default: 'Delete*'<br>
+What text should the delete button show.<br>
+**addFileEvent**<br>
+*default: function() {}*<br>
+What else should happen when a file is added.<br>
+**changeFileEvent**<br>
+*default: function() {}*<br>
+What else should happen when a file is changed.<br>
+**deleteFileEvent**<br>
+*default: function() {}*<br>
 What else should happen when a file is deleted.
 
 <pre>
@@ -139,11 +139,11 @@ Some people like options, others prefer events. Whatever your preference is, som
 
 That's why you can call every event option directly with Uploadr's custom events, anywhere in your code.
 
-**addFile**
-This event fires immediately when a file is added.
-**changeFile**
-This event fires immediately when a file is changed.
-**deleteFile**
+**addFile**<br>
+This event fires immediately when a file is added.<br>
+**changeFile**<br>
+This event fires immediately when a file is changed.<br>
+**deleteFile**<br>
 This event fires immediately when a file is deleted.
 
 *Example*
