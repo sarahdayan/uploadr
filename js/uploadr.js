@@ -1,4 +1,4 @@
-/* Uploadr v1.1.0 by Sarah Dayan | http://demos.sarahdayan.com/uploadr */
+/* Uploadr v1.1.0 by Sarah Dayan | https://sarahdayan.github.io/uploadr */
 (function ($) {
 
 	$.fn.uploadr = function(options) {
