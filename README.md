@@ -70,6 +70,7 @@ You're free to use the Uploadr theme or not, but it still needs a few lines of C
   width: 100%;
   height: 100%;
   opacity: 0;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
   cursor: pointer;
 }
 
@@ -130,6 +131,26 @@ $('.uploadr').uploadr({
   addFileEvent: function() {},    // any function
   changeFileEvent: function() {}, // any function
   deleteFileEvent: function() {}  // any function
+});</pre>
+
+### New: Events
+
+Some people like options, others prefer events. Whatever your preference is, sometimes you just need to fire an event in specific curcumstances, and adding that logic directly within an option can become cumbersome and unreadable rather quickly.
+
+That's why you can call every event option directly with Uploadr's custom events, anywhere in your code.
+
+**addFile**
+This event fires immediately when a file is added.
+**changeFile**
+This event fires immediately when a file is changed.
+**deleteFile**
+This event fires immediately when a file is deleted.
+
+*Example*
+
+<pre>
+$('#uploadr').on('addFile', function() {
+  // do stuff whenever a file is added
 });</pre>
 
 ### Optional — Uploadr theme

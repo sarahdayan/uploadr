@@ -1,4 +1,4 @@
-/* Uploadr v1.1.0 by Sarah Dayan | http://demos.sarahdayan.com/uploadr */
+/* Uploadr v1.1.0 by Sarah Dayan | https://sarahdayan.github.io/uploadr */
 (function ($) {
 
 	$.fn.uploadr = function(options) {
@@ -73,7 +73,7 @@
 
 		function displayFileName(preview, filename, isNew) {
 			preview.html(filename);
-			addOrDeleteEvent(isNew);
+			addOrChangeEvent(isNew);
 		}
 
 		function displayFilePreview(preview, file, isNew) {
@@ -85,39 +85,39 @@
 			if (file) {
 				reader.readAsDataURL(file);
 			}
-			addOrDeleteEvent(isNew);
+			addOrChangeEvent(isNew);
 		}
 
-		function deleteFile(uploadr, wrapper, callback) {
-			callback = typeof(callback) === 'undefined' ? true : callback;
+		function deleteFile(uploadr, wrapper, event) {
+			event = typeof(event) === 'undefined' ? true : event;
 			uploadr[0].value = null;
 			wrapper.addClass('uploadr-new').removeClass('uploadr-exists');
 			storedValue = '';
-			if (callback) {
-				deleteFileEvent();
+			if (event) {
+				uploadr.trigger('deleteFile');
 			}
 		}
 
-		function addOrDeleteEvent(isNew) {
+		function addOrChangeEvent(isNew) {
 			if (isNew) {
-				addFileEvent();
+				uploadr.trigger('addFile');
 			}
 			else {
-				changeFileEvent();
+				uploadr.trigger('changeFile');
 			}
 		}
 
-		function addFileEvent() {
+		uploadr.on('addFile', function() {
 			settings.addFileEvent();
-		}
+		});
 
-		function changeFileEvent() {
+		uploadr.on('changeFile', function() {
 			settings.changeFileEvent();
-		}
+		});
 
-		function deleteFileEvent() {
+		uploadr.on('deleteFile', function() {
 			settings.deleteFileEvent();
-		}
+		});
 
 	};
 
